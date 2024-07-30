@@ -3,79 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medication</title>
+    <title>Glucose</title>
     <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Sidebar styling */
+        .modal{
+            margin-left: 400px;
+            border:2px solid black;
+            height: 80%;
+            margin-top: 100px; 
+            padding: 20x;
+        }
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+            cursor: pointer;
+        }
+        .content {
+            margin-left: 180px; /* Adjust margin to match sidebar width */
+            padding: 20px;
+        }
+        .cursor {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Sidebar -->
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                    <div class="sidebar-sticky">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Orders
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Products
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Customers
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-    
-                <!-- Main content -->
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="btn-group mr-2">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                <span data-feather="calendar"></span>
-                                This week
-                            </button>
-                        </div>
-                    </div>
-    
-                    <!-- Content goes here -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </div>
-    </body>
-    
+    <!-- Sidebar -->
+    <div class="sidebar mt-2 ml-1">
+        <b class="text-light pl-3 bg-dark">Menu</b>
+        <a class="cursor" href="#checkyourillness"><i class="fas fa-notes-medical pr-2"></i>Your Illness</a>
+        <a class="cursor" href="#getmedication"><i class="fas fa-pills pr-1"></i> Get Medication</a>
+        <a class="cursor" href="#healthprescription"><i class="fas fa-prescription pr-2"></i>Prescription</a>
+        <a class="cursor" href="#thedoctorsadvice"><i class="fas fa-user-md pr-2"></i>Doctor's Advice</a>
+        <a class="cursor" href="#contact"><i class="fas fa-envelope pr-1"></i> Contact</a>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Content and Navbar -->
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white nav nav-bar navbar-dark" href="#">Glucose</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <form>
+                <span><b>Select Symptom:</b></span>
+                <select id="select" class="form-control w-50 mb-3">
+                    <option class="form-control w-50" value="chronic fatigue">Chronic fatigue</option>
+                    <option class="form-control w-50" value="inflammation">Inflammation</option>
+                    <option class="form-control w-50" value="acne">Acne</option>
+                    <option class="form-control w-50" value="eczema">Eczema</option>
+                    <option class="form-control w-50" value="psoriasis">Psoriasis</option>
+                    <option class="form-control w-50" value="wrinkles">Wrinkles</option>
+                    <option class="form-control w-50" value="type 2 diabetes">Type 2 diabetes</option>
+                    <option class="form-control w-50" value="weight gain">Weight gain</option>
+                </select>
+
+                <div id="modals" class="modal text-dark bg-light w-50">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalsLabel">Condition Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div id="condition" class="modal-body text-dark">
+                                <!-- Dynamic content will be inserted here -->
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="closemedication()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span><b>Describe your situation:</b></span>
+                <textarea id="description" rows="8" cols="9" class="form-control pb-3"></textarea>
+                <button type="button" class="btn text-primary btn-light mt-2" data-bs-toggle="modal" data-bs-target="#modals" onclick="showCondition()"><b>Know Your Condition</b></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showCondition() {
+            var symptom = document.getElementById("select").value;
+            var description = document.getElementById("description").value;
+
+            var conditions = {
+    'chronic fatigue': "Chronic fatigue in diabetes is a persistent sense of tiredness not relieved by rest. It can be caused by fluctuating blood sugar levels, insulin resistance, sleep disturbances, chronic inflammation, nutrient deficiencies, high stress levels, diabetes-related complications, and side effects of medications. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions involve meticulous blood sugar management through insulin or oral medications, a balanced diet rich in essential nutrients, regular physical activity, maintaining good sleep hygiene, and stress management techniques. Regular consultations with healthcare providers are essential for personalized treatment. Health awareness includes regular monitoring of blood glucose levels, maintaining a healthy weight, and avoiding prolonged periods of inactivity or high-stress situations. **Doctor's Prescription:** Often includes medications like metformin, insulin therapy, or other glucose-lowering agents, along with lifestyle recommendations and possible referrals to a nutritionist or endocrinologist.",
+    
+    'inflammation': "Inflammation in diabetes can manifest as swelling, redness, or pain in various body parts and may contribute to complications like cardiovascular diseases. It often results from high blood sugar levels, obesity, or chronic infections. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions for managing inflammation include anti-inflammatory medications, maintaining tight blood sugar control, and addressing underlying health issues. Incorporating anti-inflammatory foods (such as fatty fish, fruits, and vegetables) and avoiding processed foods can help. Regular physical activity and maintaining a healthy weight are also recommended. Health awareness involves understanding the link between inflammation and diabetes and taking steps to reduce inflammation through lifestyle changes and medical interventions. **Doctor's Prescription:** May include NSAIDs or other anti-inflammatory drugs, and prescription adjustments for diabetes management, potentially involving a rheumatologist or cardiologist for comprehensive care.",
+    
+    'acne': "Acne can be exacerbated by hormonal changes and high blood sugar levels, often seen in both Type 1 and Type 2 diabetes. Elevated insulin levels can increase sebum production, leading to acne outbreaks. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions include topical treatments such as retinoids, benzoyl peroxide, or antibiotics, along with effective blood sugar management. Maintaining a consistent skincare routine, avoiding greasy or comedogenic products, and choosing low glycemic index foods can help manage acne. Health awareness involves understanding how diabetes can affect skin health and implementing both medical and lifestyle strategies to keep acne under control. **Doctor's Prescription:** Topical treatments like retinoids or antibiotics, possible oral medications for severe cases, and prescription guidance for managing blood glucose levels.",
+    
+    'eczema': "Eczema, or atopic dermatitis, can be aggravated by diabetes-related factors such as high blood sugar levels and infections. It results in dry, itchy, and inflamed skin. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions include using moisturizers to prevent dryness, corticosteroids to reduce inflammation, and maintaining good blood sugar control to prevent flare-ups. Avoiding triggers like harsh soaps and allergens is important. Health awareness involves understanding how diabetes can affect skin health and ensuring that eczema is managed with both proper skincare and diabetes management practices. **Doctor's Prescription:** Corticosteroid creams, antihistamines for itching, and possibly immunosuppressants for severe cases, along with diabetes management strategies.",
+    
+    'psoriasis': "Psoriasis is a chronic autoimmune condition that can be worsened by diabetes due to inflammation and immune system dysfunction. It leads to red, scaly patches on the skin. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions for psoriasis include topical treatments, phototherapy, systemic medications, and maintaining good blood sugar control. Health awareness includes understanding the relationship between psoriasis and diabetes, avoiding psoriasis triggers (such as stress or certain medications), and integrating a healthy diet and regular exercise into daily routines. **Doctor's Prescription:** Topical treatments like corticosteroids, phototherapy, systemic medications (such as biologics), and insulin or other diabetes medications to control blood glucose levels.",
+    
+    'wrinkles': "Wrinkles can be more pronounced in individuals with diabetes due to chronic high blood sugar levels that can damage skin proteins like collagen and elastin. Possible related diabetes illnesses include Type 1 and Type 2 diabetes. Medical solutions include using anti-aging creams that contain retinoids, antioxidants, or hyaluronic acid, and maintaining blood sugar levels to minimize skin damage. Preventive measures include sun protection, staying hydrated, and using moisturizing products. Health awareness involves understanding the impact of diabetes on skin aging and adopting skincare routines that can help mitigate these effects. **Doctor's Prescription:** Anti-aging treatments like topical retinoids or antioxidants, and possibly hormonal treatments if necessary, alongside diabetes management.",
+    
+    'type 2 diabetes': "Type 2 diabetes is characterized by insulin resistance and high blood sugar levels. It often develops due to a combination of genetic factors and lifestyle choices. Medical solutions include managing blood sugar levels through diet, exercise, oral medications, and sometimes insulin therapy. Lifestyle changes such as adopting a balanced diet, regular physical activity, and weight management are crucial. Health awareness involves understanding the risk factors for Type 2 diabetes, monitoring blood sugar levels regularly, and making proactive changes to prevent or manage the condition effectively. **Doctor's Prescription:** Medications such as metformin, sulfonylureas, or insulin, lifestyle recommendations, and possibly referrals to specialists for comprehensive care.",
+    
+    'weight gain': "Weight gain can be a consequence of insulin resistance, sedentary lifestyle, and poor diet, often associated with Type 2 diabetes. Excess weight can exacerbate blood sugar control issues and increase the risk of diabetes-related complications. Possible related diabetes illnesses include Type 2 diabetes. Medical solutions for managing weight gain include dietary adjustments, increased physical activity, weight management programs, and medications if necessary. Health awareness involves understanding the connection between weight and diabetes, adopting a healthy eating plan, and engaging in regular exercise to maintain a healthy weight and improve overall health. **Doctor's Prescription:** Weight management programs, medications like GLP-1 agonists, and guidance on diet and exercise, potentially including referrals to a nutritionist or obesity specialist."
+};
+
+
+            var conditionText = conditions[symptom] || "Information not available.";
+            document.getElementById('condition').innerHTML = conditionText;
+
+            var m = document.getElementById('modals').style.display = 'block';
+        }
+        function closemedication(){
+            document.getElementById('modals').style.display = 'none';
+        }
+    </script>
+
+    <!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
